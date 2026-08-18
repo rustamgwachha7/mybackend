@@ -13,6 +13,11 @@ app.get("/", (req, res) => {
 });
 app.use("/tasks", taskroutes);
 
+app.use((err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+  console.error(err);
+  res.status(500).json({ message: "Something went wrong" });
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
