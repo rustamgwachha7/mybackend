@@ -8,9 +8,8 @@ datasource db {
 }
 
 model Task {
-  id       Int    @id @default(autoincrement())
-  title    String
-  status   String @default("pending")
-  email    String
-  password String
+  id          Int      @id @default(autoincrement())
+  title       String
+  description String?
+  status      String   @default("pending")
 }
